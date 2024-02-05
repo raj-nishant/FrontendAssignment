@@ -14,7 +14,7 @@ const TestimonialCard: React.FC<{
       <div className="mt-9 text-2xl leading-8 text-slate-800">
         &quot;{quote}&quot;
       </div>
-      <div className="mt-2 text-sm leading-8 text-gray-500">
+      <div className="mt-2 text-sm leading-6 text-gray-500">
         &quot;{description}&quot;
       </div>
       <div className="shrink-0 mt-2 h-px bg-zinc-200" />
