@@ -8,6 +8,7 @@ import PartnerOrganization from "./components/PartnerOrganization.tsx";
 import Path from "./components/Path/Path.tsx";
 import Team from "./components/Team/Team.tsx";
 import Call from "./components/Call/Call.tsx";
+import Footer from "./components/Footer/Footer.tsx";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Path />
       <Team />
       <Call />
+      <Footer />
     </>
   );
 }
