@@ -1,14 +1,16 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
-const Header = () => {
-  const [toggle, setToggle] = useState(false);
+interface HeaderProps {}
+
+const Header: React.FC<HeaderProps> = () => {
+  const [toggle, setToggle] = useState<boolean>(false);
 
   const handleToggle = () => {
     setToggle(!toggle);
   };
 
   return (
-    <div className="w-full h-[80px] bg-white  px-20 ">
+    <div className="w-full h-[80px] bg-white px-20 ">
       <div className="md:max-w-[1480px] max-w-[600px] m-auto h-full w-full flex justify-between items-center">
         <img
           src="/logo.png"

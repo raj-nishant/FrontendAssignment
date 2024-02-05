@@ -1,4 +1,6 @@
-function DesktopMembers() {
+import React from "react";
+
+function DesktopMembers(): JSX.Element {
   return (
     <div className="hidden relative md:flex items-center w-fit justify-center mt-56">
       <div className="relative left-44">
@@ -20,7 +22,7 @@ function DesktopMembers() {
   );
 }
 
-function MobileMembers() {
+function MobileMembers(): JSX.Element {
   return (
     <div className="relative flex flex-col md:hidden items-center justify-between w-full">
       <div className="top-0 flex">
@@ -58,7 +60,7 @@ function MobileMembers() {
   );
 }
 
-const Team = () => {
+const Team: React.FC = () => {
   return (
     <>
       <div className="absolute w-full h-full hidden md:flex justify-around gap-96 items-center -z-10">

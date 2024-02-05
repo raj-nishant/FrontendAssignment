@@ -1,21 +1,21 @@
-import Header from "./components/Header.tsx";
-import Landing from "./components/Landing.tsx";
+import Header from "./components/Header/Header.tsx";
+import Landing from "./components/Landing/Landing.tsx";
 import Ratings from "./components/Ratings/Ratings.tsx";
-import PageTwo from "./components/PageTwo.tsx";
-import PageTwoExtend from "./components/PageTwoExtend.tsx";
+import PageTwoExtend from "./components/OurServices/PageTwoExtend.tsx";
 import "./App.css";
 import PartnerOrganization from "./components/PartnerOrganization.tsx";
 import Path from "./components/Path/Path.tsx";
 import Team from "./components/Team/Team.tsx";
 import Call from "./components/Call/Call.tsx";
 import Footer from "./components/Footer/Footer.tsx";
+import OurServices from "./components/OurServices/OurServices.tsx";
 
 function App() {
   return (
     <>
       <Header />
       <Landing />
-      <PageTwo />
+      <OurServices />
       <PageTwoExtend />
       <PartnerOrganization />
       <Ratings />

@@ -1,5 +1,3 @@
-// import Subscribe from "./subscribe";
-
 const Footer = () => {
   return (
     <>

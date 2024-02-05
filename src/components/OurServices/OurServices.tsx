@@ -31,7 +31,7 @@ const ServiceCard: React.FC<ServiceProps> = ({
   );
 };
 
-const PageTwo: React.FC = () => {
+const OurServices: React.FC = () => {
   return (
     <div className="flex z-10 flex-col justify-center px-12 py-12 mt-0 w-full max-md:px-5 max-md:max-w-full">
       <div className="self-center mt-6 text-3xl font-medium bg-clip-text bg-[linear-gradient(180deg,#3171DE_0%,#704AF2_100%)] leading-[60px] text-neutral-700 max-md:max-w-full">
@@ -62,4 +62,4 @@ const PageTwo: React.FC = () => {
   );
 };
 
-export default PageTwo;
+export default OurServices;

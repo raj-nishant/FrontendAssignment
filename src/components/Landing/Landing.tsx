@@ -1,4 +1,6 @@
-const Landing = () => {
+import React from "react";
+
+const Landing: React.FC = () => {
   return (
     <div className="w-full h-[calc(100vh-100px)] relative ">
       <div className="image-container md:px-16 md:py-12">

@@ -1,4 +1,4 @@
-const Call = () => {
+const Call: React.FC = () => {
   return (
     <>
       <div className="">
@@ -8,7 +8,7 @@ const Call = () => {
               Ready to Transform Your Vision into Reality? Let's Get Started!
             </p>
             <button className="bg-white font-semibold text-lg mdtext-2xl px-10 py-3 rounded-full mt-10">
-              <span className="grad-text">Schedule a Call</span>
+              <span className="grad-text text-blue-500">Schedule a Call</span>
             </button>
             <img
               src="/Intersect1.png"
