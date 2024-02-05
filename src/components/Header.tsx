@@ -23,7 +23,9 @@ const Header = () => {
         <div className="border rounded-[50px] bg-[#F7F7FD] h-[49px] flex items-center justify-center">
           <div className="hidden md:flex  w-[633px]  justify-center">
             <ul className="flex gap-20">
-              <li className="cursor-pointer">Home</li>
+              <li className="cursor-pointer text-blue-600 font-semibold">
+                Home
+              </li>
               <li className="cursor-pointer">About us</li>
               <li className="cursor-pointer">Services</li>
               <li className="cursor-pointer">Contact Us</li>
