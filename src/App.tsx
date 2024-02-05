@@ -3,7 +3,7 @@ import Landing from "./components/Landing/Landing.tsx";
 import Ratings from "./components/Ratings/Ratings.tsx";
 import PageTwoExtend from "./components/OurServices/PageTwoExtend.tsx";
 import "./App.css";
-import PartnerOrganization from "./components/PartnerOrganization.tsx";
+import PartnerOrganization from "./components/PartnerOrganization/PartnerOrganization.tsx";
 import Path from "./components/Path/Path.tsx";
 import Team from "./components/Team/Team.tsx";
 import Call from "./components/Call/Call.tsx";
