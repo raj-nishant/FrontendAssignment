@@ -56,15 +56,15 @@ const Ratings: React.FC = () => {
               imageUrl="/Dovetail.png"
             />
           </div>
-          <div className="flex gap-5 self-center mt-20 max-w-full w-[148px] max-md:mt-10">
+          <div className="flex gap-5 self-center mt-14 max-w-full w-[148px] max-md:mt-10">
             <img
               loading="lazy"
-              src="/left.svg"
+              src="/leftbtn.png"
               className="flex-1 shrink-0 w-full aspect-square"
             />
             <img
               loading="lazy"
-              src="/right.svg"
+              src="/rightbtn.png"
               className="flex-1 shrink-0 w-full aspect-square fill-slate-50"
             />
           </div>

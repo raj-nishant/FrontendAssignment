@@ -72,9 +72,9 @@ const Footer = () => {
           <p className=" text-sm font-normal">Cookies</p>
         </div>
         <div className="flex justify-center gap-5 items-center w-full pe-20">
-          <img src="/fb.svg" alt="" />
-          <img src="/twitter.svg" alt="" />
-          <img src="/linkedin.svg" alt="" />
+          <img src="/fb.png" alt="" />
+          <img src="/twitter.png" alt="" />
+          <img src="/linkedin.png" alt="" />
         </div>
       </div>
     </>
