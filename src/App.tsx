@@ -7,7 +7,7 @@ import Path from "./components/Path/Path.tsx";
 import Team from "./components/Team/Team.tsx";
 import Call from "./components/Call/Call.tsx";
 import Footer from "./components/Footer/Footer.tsx";
-import Domains from "./components/OurServices/Domains.tsx";
+import Domains from "./components/Domains/Domains.tsx";
 
 function App() {
   return (
