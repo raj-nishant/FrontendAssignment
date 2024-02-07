@@ -1,9 +1,9 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
-const Path = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
+const Path: React.FC = () => {
+  const [scrollPosition, setScrollPosition] = useState<number>(0);
 
-  const handleScroll = (scrollOffset) => {
+  const handleScroll = (scrollOffset: number) => {
     const newPosition = scrollPosition + scrollOffset;
     setScrollPosition(newPosition < 0 ? 0 : newPosition);
   };
@@ -70,9 +70,13 @@ const Path = () => {
           {/* Add similar divs for other sections */}
         </div>
 
-        <div className="flex mt-5 gap-5">
-          <img src="/leftbtn.png" alt="" onClick={() => handleScroll(-100)} />
-          <img src="/rightbtn.png" alt="" onClick={() => handleScroll(100)} />
+        <div className="flex gap-5 self-center mt-5 max-w-full w-[148px] ">
+          <button onClick={() => handleScroll(-100)}>
+            <img loading="lazy" src="/leftbtn.png" alt="Left Button" />
+          </button>
+          <button onClick={() => handleScroll(100)}>
+            <img loading="lazy" src="/rightbtn.png" alt="Right Button" />
+          </button>
         </div>
       </div>
     </>

@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import TestimonialCard from "./TestimonialCard";
+
 const Ratings: React.FC = () => {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = (scrollOffset: number) => {
+    const newPosition = scrollPosition + scrollOffset;
+    const containerWidth = containerRef.current?.offsetWidth || 0;
+    const contentWidth = containerRef.current?.scrollWidth || 0;
+
+    if (newPosition >= 0 && newPosition <= contentWidth - containerWidth) {
+      setScrollPosition(newPosition);
+    }
+  };
+
   return (
     <>
       <div className="relative">
@@ -22,7 +36,11 @@ const Ratings: React.FC = () => {
           Our 4,000+ team has expertise in almost every programming language.
         </div>
         <div className="flex flex-col self-stretch px-12 py-10 mt-24 w-full max-md:px-5 max-md:mt-10 max-md:max-w-full">
-          <div className="flex gap-5 justify-between font-bold max-md:max-w-full overflow-scroll">
+          <div
+            ref={containerRef}
+            className="flex gap-5 justify-between font-bold max-md:max-w-full overflow-hidden"
+            style={{ overflowX: "auto", scrollBehavior: "smooth" }}
+          >
             <TestimonialCard
               rating="⭐⭐️⭐️⭐️⭐️️"
               quote="Exceptional Solutions, Exceeded Expectations!"
@@ -57,16 +75,12 @@ const Ratings: React.FC = () => {
             />
           </div>
           <div className="flex gap-5 self-center mt-5 max-w-full w-[148px] ">
-            <img
-              loading="lazy"
-              src="/leftbtn.png"
-              className="flex-1 shrink-0 w-full aspect-square"
-            />
-            <img
-              loading="lazy"
-              src="/rightbtn.png"
-              className="flex-1 shrink-0 w-full aspect-square fill-slate-50"
-            />
+            <button onClick={() => handleScroll(-100)}>
+              <img loading="lazy" src="/leftbtn.png" alt="Left Button" />
+            </button>
+            <button onClick={() => handleScroll(100)}>
+              <img loading="lazy" src="/rightbtn.png" alt="Right Button" />
+            </button>
           </div>
         </div>
       </div>
