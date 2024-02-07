@@ -1,16 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 const Path: React.FC = () => {
   const [scrollPosition, setScrollPosition] = useState<number>(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const boxWidth = 380; // Width of each box
+  const numBoxes = 4; // Number of boxes
+
+  useEffect(() => {
+    const containerWidth =
+      containerRef.current?.getBoundingClientRect().width || 0;
+    const maxScrollPosition = numBoxes * boxWidth - containerWidth;
+    if (scrollPosition > maxScrollPosition) {
+      setScrollPosition(maxScrollPosition);
+    }
+  }, [scrollPosition]);
 
   const handleScroll = (scrollOffset: number) => {
     const newPosition = scrollPosition + scrollOffset;
-    setScrollPosition(newPosition < 0 ? 0 : newPosition);
+    setScrollPosition(Math.max(0, newPosition));
   };
 
   return (
     <>
-      <div className="flex flex-col justify-center items-center bg-gray-100 m-10 rounded-xl p-5">
+      <div
+        ref={containerRef}
+        className="flex flex-col justify-center items-center bg-gray-100 m-10 rounded-xl p-5 overflow-hidden"
+      >
         <div className="flex text-2xl md:text-4xl font-semibold text-center m-10">
           <div>
             Choose Us: Your Path to Innovation and{" "}
@@ -18,7 +33,7 @@ const Path: React.FC = () => {
           </div>
           <img className="ml-2 max-md:hidden" src="/greenHex.png" alt="" />
         </div>
-        <div className="flex items-center justify-between overflow-hidden gap-5 h-66 w-full">
+        <div className="flex items-center justify-between md:gap-5 md:ml-7 h-66 w-full">
           <div
             className="flex flex-col items-center m-5 bg-white shadow-lg rounded-xl p-5 z-50 w-80 h-52"
             style={{ transform: `translateX(-${scrollPosition}px)` }}
@@ -31,7 +46,6 @@ const Path: React.FC = () => {
               in various areas of technology.
             </p>
           </div>
-
           <div
             className="flex flex-col items-center text-white m-5 bg-gradient-to-tr from-[#EDE14F] to-[#62AE6E] shadow-lg rounded-xl p-5 z-50 w-80 h-52"
             style={{ transform: `translateX(-${scrollPosition}px)` }}
@@ -66,8 +80,6 @@ const Path: React.FC = () => {
               We understand that no two projects are alike.
             </p>
           </div>
-
-          {/* Add similar divs for other sections */}
         </div>
 
         <div className="flex gap-5 self-center mt-5 max-w-full w-[148px] ">

@@ -32,7 +32,7 @@ const Ratings: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-10 mr-16 text-xl font-medium leading-6 text-neutral-600 w-[561px] max-md:mr-2.5 max-md:max-w-full">
+        <div className="mt-10 max-md:mx-3 text-xl font-medium leading-6 text-neutral-600 ">
           Our 4,000+ team has expertise in almost every programming language.
         </div>
         <div className="flex flex-col self-stretch px-12 py-10 mt-24 w-full max-md:px-5 max-md:mt-10 max-md:max-w-full">
@@ -74,14 +74,14 @@ const Ratings: React.FC = () => {
               imageUrl="/Dovetail.png"
             />
           </div>
-          <div className="flex gap-5 self-center mt-5 max-w-full w-[148px] ">
+          {/* <div className="flex gap-5 self-center mt-5 max-w-full w-[148px] ">
             <button onClick={() => handleScroll(-100)}>
               <img loading="lazy" src="/leftbtn.png" alt="Left Button" />
             </button>
             <button onClick={() => handleScroll(100)}>
               <img loading="lazy" src="/rightbtn.png" alt="Right Button" />
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
