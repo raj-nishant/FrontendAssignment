@@ -1,20 +1,7 @@
-import React, { useState, useRef } from "react";
+import React from "react";
 import TestimonialCard from "./TestimonialCard";
 
 const Ratings: React.FC = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  const handleScroll = (scrollOffset: number) => {
-    const newPosition = scrollPosition + scrollOffset;
-    const containerWidth = containerRef.current?.offsetWidth || 0;
-    const contentWidth = containerRef.current?.scrollWidth || 0;
-
-    if (newPosition >= 0 && newPosition <= contentWidth - containerWidth) {
-      setScrollPosition(newPosition);
-    }
-  };
-
   return (
     <>
       <div className="relative">
@@ -37,7 +24,6 @@ const Ratings: React.FC = () => {
         </div>
         <div className="flex flex-col self-stretch px-12 py-10 mt-24 w-full max-md:px-5 max-md:mt-10 max-md:max-w-full">
           <div
-            ref={containerRef}
             className="flex gap-5 justify-between font-bold max-md:max-w-full overflow-hidden"
             style={{ overflowX: "auto", scrollBehavior: "smooth" }}
           >
