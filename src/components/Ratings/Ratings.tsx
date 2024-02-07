@@ -1,25 +1,7 @@
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 import TestimonialCard from "./TestimonialCard";
 
 const Ratings: React.FC = () => {
-  const [scrollPosition, setScrollPosition] = useState<number>(0);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const boxWidth = 380; // Width of each box
-  const numBoxes = 4; // Number of boxes
-
-  useEffect(() => {
-    const containerWidth =
-      containerRef.current?.getBoundingClientRect().width || 0;
-    const maxScrollPosition = numBoxes * boxWidth - containerWidth;
-    if (scrollPosition > maxScrollPosition) {
-      setScrollPosition(maxScrollPosition);
-    }
-  }, [scrollPosition]);
-
-  const handleScroll = (scrollOffset: number) => {
-    const newPosition = scrollPosition + scrollOffset;
-    setScrollPosition(Math.max(0, newPosition));
-  };
   return (
     <>
       <div className="relative">
@@ -41,7 +23,7 @@ const Ratings: React.FC = () => {
           Our 4,000+ team has expertise in almost every programming language.
         </div>
         <div className="flex flex-col self-stretch px-12 py-10 mt-24 w-full max-md:px-5 max-md:mt-10 max-md:max-w-full">
-          <div className="flex gap-5 justify-between font-bold max-md:max-w-full overflow-hidden">
+          <div className="flex gap-5 justify-between font-bold max-md:max-w-full overflow-x-auto">
             <TestimonialCard
               rating="⭐⭐️⭐️⭐️⭐️️"
               quote="Exceptional Solutions, Exceeded Expectations!"
@@ -49,7 +31,6 @@ const Ratings: React.FC = () => {
               authorName="Mary Johnson"
               authorRole="CEO of TechCraft Solutions"
               imageUrl="/Vector.png"
-              scrollPosition={scrollPosition}
             />
             <TestimonialCard
               rating="⭐⭐️⭐️⭐️⭐️️"
@@ -58,7 +39,6 @@ const Ratings: React.FC = () => {
               authorName="Mark Williams"
               authorRole="COO of InnovateNow Inc"
               imageUrl="/mark.png"
-              scrollPosition={scrollPosition}
             />
             <TestimonialCard
               rating="⭐⭐️⭐️⭐️⭐️️"
@@ -67,7 +47,6 @@ const Ratings: React.FC = () => {
               authorName="Emily Clark"
               authorRole="CMO of Visionary Apps"
               imageUrl="/Dovetail.png"
-              scrollPosition={scrollPosition}
             />
             <TestimonialCard
               rating="⭐⭐️⭐️⭐️⭐️️"
@@ -76,16 +55,7 @@ const Ratings: React.FC = () => {
               authorName="Emily Clark"
               authorRole="CMO of Visionary Apps"
               imageUrl="/Dovetail.png"
-              scrollPosition={scrollPosition}
             />
-          </div>
-          <div className="flex gap-5 self-center mt-5 max-w-full w-[148px] ">
-            <button onClick={() => handleScroll(-100)}>
-              <img loading="lazy" src="/leftbtn.png" alt="Left Button" />
-            </button>
-            <button onClick={() => handleScroll(100)}>
-              <img loading="lazy" src="/rightbtn.png" alt="Right Button" />
-            </button>
           </div>
         </div>
       </div>
