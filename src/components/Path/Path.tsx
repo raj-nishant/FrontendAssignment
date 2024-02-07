@@ -1,4 +1,13 @@
+import { useState } from "react";
+
 const Path = () => {
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const handleScroll = (scrollOffset) => {
+    const newPosition = scrollPosition + scrollOffset;
+    setScrollPosition(newPosition < 0 ? 0 : newPosition);
+  };
+
   return (
     <>
       <div className="flex flex-col justify-center items-center bg-gray-100 m-10 rounded-xl p-5">
@@ -9,8 +18,11 @@ const Path = () => {
           </div>
           <img className="ml-2 max-md:hidden" src="/greenHex.png" alt="" />
         </div>
-        <div className="flex items-center justify-between overflow-scroll gap-5 h-66 w-full">
-          <div className="flex flex-col items-center m-5 bg-white shadow-lg rounded-xl p-5 z-50 w-80 h-52">
+        <div className="flex items-center justify-between overflow-hidden gap-5 h-66 w-full">
+          <div
+            className="flex flex-col items-center m-5 bg-white shadow-lg rounded-xl p-5 z-50 w-80 h-52"
+            style={{ transform: `translateX(-${scrollPosition}px)` }}
+          >
             <p className="text-xl md:text-2xl font-semibold w-full mx-24">
               Expertise Across the Tech Spectrum
             </p>
@@ -19,7 +31,11 @@ const Path = () => {
               in various areas of technology.
             </p>
           </div>
-          <div className="flex flex-col items-center text-white m-5 bg-gradient-to-tr from-[#EDE14F] to-[#62AE6E] shadow-lg rounded-xl p-5 z-50 w-80 h-52">
+
+          <div
+            className="flex flex-col items-center text-white m-5 bg-gradient-to-tr from-[#EDE14F] to-[#62AE6E] shadow-lg rounded-xl p-5 z-50 w-80 h-52"
+            style={{ transform: `translateX(-${scrollPosition}px)` }}
+          >
             <p className="text-xl md:text-2xl font-semibold w-full mx-24">
               Proven Track Record of Success:
             </p>
@@ -28,7 +44,10 @@ const Path = () => {
               results.
             </p>
           </div>
-          <div className="flex flex-col items-center m-5 bg-white shadow-lg rounded-xl p-5 z-50 w-80 h-52">
+          <div
+            className="flex flex-col items-center m-5 bg-white shadow-lg rounded-xl p-5 z-50 w-80 h-52 "
+            style={{ transform: `translateX(-${scrollPosition}px)` }}
+          >
             <p className="text-xl md:text-2xl font-semibold w-full mx-24">
               Collaborative Approach, Transparent Communication:
             </p>
@@ -36,7 +55,10 @@ const Path = () => {
               We believe in working hand-in-hand with our clients.
             </p>
           </div>
-          <div className="flex flex-col items-center text-white m-5 bg-gradient-to-tr from-[#3171DE] to-[#4AC0F2] shadow-lg rounded-xl p-5 z-50 w-80 h-52">
+          <div
+            className="flex flex-col items-center text-white m-5 bg-gradient-to-tr from-[#3171DE] to-[#4AC0F2] shadow-lg rounded-xl p-5 z-50 w-80 h-52"
+            style={{ transform: `translateX(-${scrollPosition}px)` }}
+          >
             <p className="text-xl md:text-2xl font-semibold w-full mx-24">
               Tailored Solutions for Your Unique Needs:
             </p>
@@ -44,6 +66,13 @@ const Path = () => {
               We understand that no two projects are alike.
             </p>
           </div>
+
+          {/* Add similar divs for other sections */}
+        </div>
+
+        <div className="flex mt-5 gap-5">
+          <img src="/leftbtn.png" alt="" onClick={() => handleScroll(-100)} />
+          <img src="/rightbtn.png" alt="" onClick={() => handleScroll(100)} />
         </div>
       </div>
     </>
