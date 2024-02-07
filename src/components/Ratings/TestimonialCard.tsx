@@ -5,9 +5,21 @@ const TestimonialCard: React.FC<{
   authorName: string;
   authorRole: string;
   imageUrl: string;
-}> = ({ rating, quote, description, authorName, authorRole, imageUrl }) => {
+  scrollPosition: Number;
+}> = ({
+  rating,
+  quote,
+  description,
+  authorName,
+  authorRole,
+  imageUrl,
+  scrollPosition,
+}) => {
   return (
-    <div className="flex flex-col flex-1 p-5 bg-white rounded-3xl border-solid shadow-sm border-[0.722px] border-[color:var(--Neutral-Colors-Color-300,#F0F0F6)] max-md:px-5">
+    <div
+      className="flex flex-col flex-1 p-5 bg-white rounded-3xl border-solid shadow-sm border-[0.722px] border-[color:var(--Neutral-Colors-Color-300,#F0F0F6)] max-md:px-5"
+      style={{ transform: `translateX(-${scrollPosition}px)` }}
+    >
       <div className="text-2xl leading-7 text-slate-800 tracking-[2.89px]">
         {rating}
       </div>
